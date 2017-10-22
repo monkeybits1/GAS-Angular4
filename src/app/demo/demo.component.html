@@ -1,0 +1,7 @@
+<p>
+  demo works! This is the first child component of 'app component'
+  <button (click)='toggleStatus();false'>Click to toggle status</button>
+  <button (click)='getDate();false'>Click to get today's date and time</button> Now: {{date}}
+  <app-input-demo [componentName]='componentName' *ngIf='checkStatus();false'></app-input-demo>
+</p>
+
