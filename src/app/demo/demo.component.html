@@ -2,6 +2,10 @@
   demo works! This is the first child component of 'app component'
   <button (click)='toggleStatus();false'>Click to toggle status</button>
   <button (click)='getDate();false'>Click to get today's date and time</button> Now: {{date}}
+  <button (click)='getssname();false'>Click to get spreadsheet name</button> name: {{ssname}}
+  <select name="" id="">
+    <option value="" *ngFor="let n of ssname" >{{n}}</option>
+  </select>
   <app-input-demo [componentName]='componentName' *ngIf='checkStatus();false'></app-input-demo>
 </p>
 
