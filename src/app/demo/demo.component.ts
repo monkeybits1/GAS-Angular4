@@ -4,6 +4,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core'
 
 
 declare const google
+declare const gapi:any
 
 @Component({
   selector: 'app-demo',
@@ -17,6 +18,11 @@ export class DemoComponent implements OnInit {
   date: string;
   ssname: string;
 
+
+
+
+
+
   toggleStatus(){
     this.clickStatus = !this.clickStatus;
     this.componentName = 'demo ' + this.clickStatus;
@@ -29,18 +35,9 @@ export class DemoComponent implements OnInit {
     this.date = this.getDateService.getDate();
   }
 
-  getssname(){
-    let self = this;
-    google.script.run.withSuccessHandler(function(name){
-      self.ssname = name;
-      self.cd.detectChanges();
-    }).getSSName();
 
-  }
 
-  // showName(name){
-  //   this.ssname = name;
-  // }
+
 
 
   constructor(private getDateService: GetDateService, private cd: ChangeDetectorRef) { }
@@ -48,13 +45,13 @@ export class DemoComponent implements OnInit {
 
 
   ngOnInit() {
-    let self = this;
-    google.script.run
-      .withSuccessHandler(function(name) {
-        self.ssname = name;
-        self.cd.detectChanges();
-      })
-      .getSSName();
+    // let self = this;
+    // google.script.run
+    //   .withSuccessHandler(function(name) {
+    //     self.ssname = name;
+    //     self.cd.detectChanges();
+    //   })
+    //   .getSSName();
   }
 
 }
